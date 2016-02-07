@@ -1,0 +1,28 @@
+# aquamacs temporary files
+.\#*
+
+# emacs temporary files
+*~
+\#*\#
+
+# directory used by auctex for caching
+.auto
+
+# presumably something to do with synctex?
+*.synctex.gz
+
+# reftex temporary file
+*.rel
+
+# Mac files for folder properties
+.DS_Store
+.Rapp.history
+
+# latex
+*.aux
+*.bbl
+*.blg
+*.log
+*.thm
+
+.ipynb_checkpoints

@@ -1,0 +1,4 @@
+defshell -bash 
+termcapinfo xterm* ti@:te@
+startup_message off
+defutf8 on
