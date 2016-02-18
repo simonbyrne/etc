@@ -1,7 +1,12 @@
+alias cls="CLICOLOR_FORCE=1 ls"
+alias ls="ls -p"
+export LSCOLORS="exfxcxdxbxegedabagacad" #gxBxhxDxfxhxhxhxhxcxcx
+
 # bash completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
+
 
 # OS X only
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"

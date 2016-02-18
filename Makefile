@@ -2,9 +2,11 @@ SYMLINKS := ~/.profile ~/.emacs ~/.gitconfig ~/.screenrc ~/.Rprofile
 
 symlinks: ${SYMLINKS}
 
+# get rid of all symlinks into ~/etc
 cleanall:
 	find ~ -maxdepth 1 -lname '${CURDIR}/*' | xargs -t rm 
 
+# get rid of broken symlinks into ~/etc
 clean:
 	find ~ -maxdepth 1 -lname '${CURDIR}/*' -exec test "!" -e {} \; -print | xargs -t rm 
 
@@ -16,6 +18,6 @@ clean:
 ~/.Rprofile : R/profile.r
 
 ${SYMLINKS} :
-	ln -s ${CURDIR}/$< $@
+	ln -i -s ${CURDIR}/$< $@
 
 .PHONY: symlinks clean cleanall

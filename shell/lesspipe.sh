@@ -1,5 +1,5 @@
 #!/bin/bash
-FILENAME="$1"
+FILENAME="${1##*/}"
 
 function exec_exists {
     hash $1 2>/dev/null
@@ -68,55 +68,55 @@ else
     esac
     case "$FILENAME" in
 	# makefiles
-	Make* )
-	    PYGMENTS="make" ;;
+	*.applescript )
+	    PYGMENTS="applescript" ;;
 	*.profile|*.sh )
 	    PYGMENTS="bash" ;;
-	*.emacs|*.el )
-	    PYGMENTS="elisp" ;;
-	*.xml|*.xsl|*.xslt|*.rss|*.svg )
-	    PYGMENTS="xml" ;;
-	*.ipynb )
-	    PYGMENTS="ipython" ;;
 	*.[ch] )
 	    PYGMENTS="c" ;;
 	*.[ch]pp|*.[ch]xx|*.cc|*.hh )
 	    PYGMENTS="cpp" ;;
-	*.jl )
-	    PYGMENTS="julia" ;;
-	*.applescript )
-	    PYGMENTS="applescript" ;;
 	*.cs )
 	    PYGMENTS="csharp" ;;
+	*.css )
+	    PYGMENTS="css" ;;
+	*.diff|*.patch )
+	    PYGMENTS="diff" ;;
+	*.emacs|*.el )
+	    PYGMENTS="elisp" ;;
 	*.f )
 	    PYGMENTS="fortran" ;;
 	*.html|*.xhtml )
 	    PYGMENTS="html" ;;
-	*.css )
-	    PYGMENTS="css" ;;
+	*.ipynb )
+	    PYGMENTS="ipython" ;;
+	*.jl )
+	    PYGMENTS="julia" ;;
 	*.java )
 	    PYGMENTS="java" ;;
 	*.js )
 	    PYGMENTS="javascript" ;;
+	Make* )
+	    PYGMENTS="make" ;;
 	*.m )
 	    # could be matlab or obj-c
 	    PYGMENTS="matlab" ;;
-	*.php )
-	    PYGMENTS="php" ;;
 	*.pl )
 	    PYGMENTS="perl" ;;
-	*.py )
-	    PYGMENTS="python" ;;
+	*.php )
+	    PYGMENTS="php" ;;
 	*.ps|*.eps )
 	    PYGMENTS="postscript" ;;
+	*.py )
+	    PYGMENTS="python" ;;
 	*.[rR]|.Rhistory|.Rprofile|.Renviron )
 	    PYGMENTS="r" ;;
 	*.[rR]d )
 	    PYGMENTS="rd" ;;
-	*.rb )
-	    PYGMENTS="ruby" ;;
 	*.rst )
 	    PYGMENTS="rst" ;;
+	*.rb )
+	    PYGMENTS="ruby" ;;
 	*.scm )
 	    PYGMENTS="scheme" ;;
 	*.sql )
@@ -125,8 +125,8 @@ else
 	    PYGMENTS="swift" ;;
 	*.tex|*.auc|*.toc )
 	    PYGMENTS="tex" ;;
-	*.diff|*.patch )
-	    PYGMENTS="diff" ;;
+	*.xml|*.xsl|*.xslt|*.rss|*.svg )
+	    PYGMENTS="xml" ;;
 	* )
 	;;
     esac
