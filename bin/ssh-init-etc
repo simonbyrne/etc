@@ -1,0 +1,2 @@
+#!/bin/sh
+ssh $* 'cd ~ && git clone https://github.com/simonbyrne/etc && make -C etc'

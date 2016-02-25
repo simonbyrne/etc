@@ -24,3 +24,6 @@ fi
 
 # prompt settings
 source "$HOME/etc/shell/prompt.sh"
+
+# completions
+source "$HOME/etc/shell/completion.sh"
