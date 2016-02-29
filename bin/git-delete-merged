@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# deletes any branches that have already been merged into master
+# only works if already on master
+if [ `git name-rev --name-only HEAD` == "master" ]; then
+    git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
+else
+    >&2 echo "Error: not on master branch"
+    exit 1
+fi

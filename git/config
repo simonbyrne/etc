@@ -25,10 +25,14 @@ editor = emacs
 ui = true
 
 [alias]
+co = checkout
+
 unadd = reset HEAD
 uncommit = reset --soft HEAD~1 
 diffw = diff --word-diff
+last = log -1 HEAD
 
+list-alias = "!git config -l | grep alias | cut -c 7-"
 
 [push]
 default = current
