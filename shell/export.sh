@@ -16,9 +16,6 @@ fi
 # colour
 export CLICOLOR=1
 
-# bash history
-export HISTSIZE="32768";
-export HISTFILESIZE="${HISTSIZE}";
 
 # less automatic colors when appropriate
 export LESS="-R"

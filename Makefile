@@ -1,4 +1,4 @@
-SYMLINKS := ~/.profile ~/.emacs ~/.gitconfig ~/.screenrc ~/.Rprofile
+SYMLINKS := ~/.profile ~/.emacs ~/.gitconfig ~/.screenrc ~/.Rprofile ~/.inputrc
 
 symlinks: ${SYMLINKS}
 
@@ -12,6 +12,7 @@ clean:
 
 
 ~/.profile : shell/profile.sh
+~/.inputrc : shell/inputrc
 ~/.emacs : emacs/emacs.el
 ~/.gitconfig : git/config
 ~/.screenrc : screen/screenrc

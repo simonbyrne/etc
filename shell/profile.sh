@@ -27,3 +27,11 @@ source "$HOME/etc/shell/prompt.sh"
 
 # completions
 source "$HOME/etc/shell/completion.sh"
+
+# bash history
+export HISTSIZE="32768"
+export HISTFILESIZE="$HISTSIZE"
+export HISTCONTROL="ignoredups"
+shopt -s cmdhist
+shopt -s histappend
+export PROMPT_COMMAND="history -a"
