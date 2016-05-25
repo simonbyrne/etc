@@ -58,11 +58,11 @@ else
 	    if exec_exists pkgutil; then
 		PROC="pkgutil --payload-files \"$1\""
 	    fi ;;
-	*.md )
-	    if exec_exists pandoc; then
-		COLS=$((`tput cols` - 4))
-		PROC="pandoc -s -f markdown -t man \"$1\" | groff -rLL=${COLS}n -rLT=${COLS}n -T utf8 -man -"
-	    fi ;;
+	# *.md )
+	#     if exec_exists pandoc; then
+	# 	COLS=$((`tput cols` - 4))
+	# 	PROC="pandoc -s -f markdown -t man \"$1\" | groff -rLL=${COLS}n -rLT=${COLS}n -T utf8 -man -"
+	#     fi ;;
 	* )
 	;;
     esac
