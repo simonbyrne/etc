@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# calculates version number (last tag + number of commits)
+# code from https://github.com/JuliaLang/Compat.jl/blob/master/bin/version.sh
+# First argument (Optional) is a ref to the commit
+
+gitref=${1:-HEAD}
+
+last_tag=$(git describe --tags --abbrev=0 "$gitref")
+ver=$(git show "$gitref:VERSION")
+nb=$(git rev-list --count "$gitref" "^$last_tag")
+echo "$ver+$nb"
