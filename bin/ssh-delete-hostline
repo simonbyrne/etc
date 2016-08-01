@@ -1,0 +1,2 @@
+#!/bin/sh
+sed -i '' "$1d" ~/.ssh/known_hosts

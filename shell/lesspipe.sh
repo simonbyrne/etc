@@ -96,7 +96,7 @@ else
 	    PYGMENTS="java" ;;
 	*.js )
 	    PYGMENTS="javascript" ;;
-	Make* )
+	Make*|*.mk )
 	    PYGMENTS="make" ;;
 	*.m )
 	    # could be matlab or obj-c

@@ -13,4 +13,4 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 #alias -- -="cd -"
 
-alias emacsc="emacsclient --alternate-editor='' -c -n"
+alias ec="emacsclient --alternate-editor='' -c -n"
