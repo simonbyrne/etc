@@ -1,5 +1,7 @@
 SYMLINKS := ~/.profile ~/.emacs ~/.gitconfig ~/.screenrc ~/.Rprofile ~/.inputrc
 
+REPLACE = -i
+
 symlinks: ${SYMLINKS}
 
 # get rid of all symlinks into ~/etc
@@ -19,6 +21,6 @@ clean:
 ~/.Rprofile : R/profile.r
 
 ${SYMLINKS} :
-	ln -i -s ${CURDIR}/$< $@
+	ln ${REPLACE} -s ${CURDIR}/$< $@
 
 .PHONY: symlinks clean cleanall
