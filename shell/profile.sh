@@ -7,7 +7,9 @@ source "$HOME/etc/shell/export.sh"
 # login message:
 # list running screen sessions
 if [ $TERM != 'screen' ]; then
-    screen -ls | grep -v 'No Sockets found'
+    if type screen >/dev/null 2>&1; then
+	screen -ls | grep -v 'No Sockets found'
+    fi
 fi
 
 # platform specific script
