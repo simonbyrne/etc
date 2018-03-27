@@ -11,6 +11,7 @@ insteadOf = private:
 
 [url "git@github.com:"]
 insteadOf = gh:
+pushInsteadOf = "https://github.com/"
 
 [url "git@github.com:simonbyrne/"]
 insteadOf = ghme:
@@ -26,6 +27,7 @@ ui = true
 
 [alias]
 co = checkout
+st = status
 
 unadd = reset HEAD
 uncommit = reset --soft HEAD~1 
