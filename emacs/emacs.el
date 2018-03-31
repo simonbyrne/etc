@@ -1,5 +1,15 @@
 ;; stop startup screen!
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (setq inhibit-startup-screen t)
+
+;; disable tab indentation
+(setq-default indent-tabs-mode nil)
 
 ;; automatically follow symlinks if under version control
 (setq vc-follow-symlinks t)
@@ -107,9 +117,19 @@
 (add-to-list 'auto-mode-alist '("\\.jl$" . julia-mode))
 
 
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+
 ;; stop emacsclient kill message
 ;; https://shreevatsa.wordpress.com/2007/01/06/using-emacsclient/
 (defun server-remove-kill-buffer-hook () (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)) (add-hook 'server-visit-hook 'server-remove-kill-buffer-hook)
+
+
+;; Melpa package manager
+(require 'package)
+(add-to-list 'package-archives
+	     '("melpa" . "http://melpa.org/packages/") t)
+
 
 ;; markdown mode
 (custom-set-variables
@@ -158,7 +178,8 @@
      ("Clean" "TeX-clean" TeX-run-function nil t :help "Delete generated intermediate files")
      ("Clean All" "(TeX-clean t)" TeX-run-function nil t :help "Delete generated intermediate and output files")
      ("Other" "" TeX-run-command t t :help "Run an arbitrary command"))))
- '(safe-local-variable-values (quote ((TeX-master . t)))))
+ '(package-selected-packages (quote (## csv-mode scss-mode sass-mode magit)))
+ '(safe-local-variable-values (quote ((julia-indent-offset . 2) (TeX-master . t)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

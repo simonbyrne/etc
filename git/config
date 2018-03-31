@@ -6,16 +6,12 @@ email = simonbyrne@gmail.com
 user = simonbyrne
 
 
-[url "stats:repos/"]
-insteadOf = private:
-
 [url "git@github.com:"]
 insteadOf = gh:
 pushInsteadOf = "https://github.com/"
 
 [url "git@github.com:simonbyrne/"]
 insteadOf = ghme:
-
 
 [core]
 excludesfile = ~/etc/git/exclude
@@ -28,6 +24,11 @@ ui = true
 [alias]
 co = checkout
 st = status
+sh = status --short --branch
+cm = commit
+
+commend = commit --amend --no-edit
+fpush = push --force-with-lease
 
 unadd = reset HEAD
 uncommit = reset --soft HEAD~1 
