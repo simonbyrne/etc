@@ -10,6 +10,8 @@ case "$TERM" in
 	fi
 	if [ -n "$STY" ]; then
 	    PS1_SCREEN="[s: $STY]";
+        elif [ -n "$TMUX" ]; then
+	    PS1_SCREEN="[t: $TMUX]";            
 	else
 	    PS1_SCREEN='─────────────────────────────────';
 	fi

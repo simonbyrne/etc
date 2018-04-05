@@ -10,6 +10,9 @@ if [ $TERM != 'screen' ]; then
     if type screen >/dev/null 2>&1; then
 	screen -ls | grep -v 'No Sockets found'
     fi
+    if type tmux >/dev/null 2>&1; then
+	tmux ls | grep -v 'no server running'
+    fi
 fi
 
 # platform specific script
