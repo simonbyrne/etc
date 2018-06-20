@@ -2,7 +2,7 @@ case "$TERM" in
     dumb)
 	PS1="> "
 	;;
-    xterm-*color|screen)	
+    *color)
 	if [ -n "$SSH_CLIENT" ]; then
 	    PS1_HOST='\[\e[31m\]\h';
 	else

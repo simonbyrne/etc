@@ -8,7 +8,6 @@ user = simonbyrne
 
 [url "git@github.com:"]
 insteadOf = gh:
-insteadOf = "https://github.com/"
 
 [url "git@github.com:simonbyrne/"]
 insteadOf = ghme:

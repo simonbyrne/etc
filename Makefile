@@ -1,4 +1,4 @@
-SYMLINKS := ~/.profile ~/.emacs ~/.gitconfig ~/.screenrc ~/.Rprofile ~/.inputrc
+SYMLINKS := ~/.profile ~/.emacs ~/.gitconfig ~/.screenrc ~/.tmux.conf ~/.Rprofile ~/.inputrc
 
 REPLACE = -i
 
@@ -18,6 +18,7 @@ clean:
 ~/.emacs : emacs/emacs.el
 ~/.gitconfig : git/config
 ~/.screenrc : screen/screenrc
+~/.tmux.conf : tmux/tmux.conf
 ~/.Rprofile : R/profile.r
 
 ${SYMLINKS} :
