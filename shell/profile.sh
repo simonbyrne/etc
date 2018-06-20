@@ -40,4 +40,3 @@ export HISTCONTROL="ignoredups"
 shopt -s cmdhist
 shopt -s histappend
 export PROMPT_COMMAND="history -a"
-

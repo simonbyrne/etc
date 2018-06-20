@@ -15,6 +15,8 @@ fi
 
 # colour
 export CLICOLOR=1
+export LESS_TERMCAP_so=$'\E[30;43m'
+export LESS_TERMCAP_se=$'\E[39;49m'
 
 
 # less automatic colors when appropriate

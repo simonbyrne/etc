@@ -13,4 +13,9 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 #alias -- -="cd -"
 
-alias ec="emacsclient --alternate-editor='' -c -n"
+if [ -n "$SSH_CLIENT" ]; then
+    alias ec="emacsclient --alternate-editor='' -c -n"
+else
+    alias ec="emacs"
+fi
+
