@@ -6,7 +6,7 @@ source "$HOME/etc/shell/export.sh"
 
 # login message:
 # list running screen sessions
-if [ $TERM != 'screen' ]; then
+if [ $TERM != "screen"* ]; then
     if type screen >/dev/null 2>&1; then
 	screen -ls | grep -v 'No Sockets found'
     fi
@@ -40,3 +40,4 @@ export HISTCONTROL="ignoredups"
 shopt -s cmdhist
 shopt -s histappend
 export PROMPT_COMMAND="history -a"
+
