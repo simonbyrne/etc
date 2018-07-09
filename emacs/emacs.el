@@ -1,11 +1,10 @@
-;; stop startup screen!
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;; stop startup screen!
 (setq inhibit-startup-screen t)
 
 ;; disable tab indentation
@@ -33,13 +32,21 @@
 ;; display column no.
 (setq column-number-mode t)
 
+
+
 ;; applescript-mode
 (require 'applescript-mode nil 'noerror)
 (add-to-list 'auto-mode-alist '("\.applescript$" . applescript-mode))
 (add-to-list 'interpreter-mode-alist '("osascript" . applescript-mode))
 
 ;; ESS
-(require 'ess-site nil 'noerror)
+;;(require 'ess-site nil 'noerror)
+
+;; my files
+(add-to-list 'load-path "~/etc/emacs")
+
+;; Julia
+(require 'julia-mode)
 
 ;;;;; AUCTEX
 ;; underlines spelling
@@ -103,19 +110,6 @@
 (add-to-list 'auto-mode-alist '("\\.cbx\\'" . latex-mode))
 ;; koma lco files
 (add-to-list 'auto-mode-alist '("\\.lco\\'" . latex-mode))
-
-;; user lisp directory
-(when (file-readable-p "~/.emacs.d/lisp/")
-  (let ((default-directory "~/.emacs.d/lisp/"))
-   (normal-top-level-add-subdirs-to-load-path)))
-
-;;;;; JULIA
-(add-to-list 'load-path "~/src/julia/contrib/") ;Tell emacs to look for the file there.
-
-(autoload 'julia-mode "julia-mode"
-   "Major mode for editing julia files" t)
-(add-to-list 'auto-mode-alist '("\\.jl$" . julia-mode))
-
 
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
