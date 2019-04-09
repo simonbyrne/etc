@@ -1,4 +1,4 @@
-SYMLINKS := ~/.profile ~/.emacs ~/.gitconfig ~/.screenrc ~/.tmux.conf ~/.Rprofile ~/.inputrc
+SYMLINKS := ~/.bash_profile ~/.emacs ~/.gitconfig ~/.screenrc ~/.tmux.conf ~/.Rprofile ~/.inputrc
 
 REPLACE = -i
 
@@ -13,7 +13,7 @@ clean:
 	find ~ -maxdepth 1 -lname '${CURDIR}/*' -exec test "!" -e {} \; -print | xargs -t rm 
 
 
-~/.profile : shell/profile.sh
+~/.bash_profile : shell/profile.sh
 ~/.inputrc : shell/inputrc
 ~/.emacs : emacs/emacs.el
 ~/.gitconfig : git/config

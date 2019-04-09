@@ -173,7 +173,11 @@
      ("Clean All" "(TeX-clean t)" TeX-run-function nil t :help "Delete generated intermediate and output files")
      ("Other" "" TeX-run-command t t :help "Run an arbitrary command"))))
  '(package-selected-packages (quote (## csv-mode scss-mode sass-mode magit)))
- '(safe-local-variable-values (quote ((julia-indent-offset . 2) (TeX-master . t)))))
+ '(safe-local-variable-values
+   (quote
+    ((julia-indent-offset 2)
+     (julia-indent-offset . 2)
+     (TeX-master . t)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
